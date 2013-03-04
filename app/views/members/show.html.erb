@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nickname:</b>
+  <%= @member.nickname %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @member.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

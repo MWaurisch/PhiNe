@@ -1,4 +1,10 @@
 PhiNe::Application.routes.draw do
+  resources :members
+
+
+  resources :replies
+
+
   resources :questions
 
 
