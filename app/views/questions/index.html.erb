@@ -1,8 +1,8 @@
-<h1>Listing questions</h1>
+<h1>Alle Fragen</h1>
 
 <table>
   <tr>
-    <th>Message</th>
+    <th>Fragen</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,13 +11,13 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.message %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Zeigen', question %></td>
+    <td><%= link_to 'Bearbeiten', edit_question_path(question) %></td>
+    <td><%= link_to 'Löschen', question, method: :delete, data: { confirm: 'Wirklich löschen?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'Neue Frage', new_question_path %>
