@@ -1,6 +1,6 @@
 <%= simple_form_for @question do |f| %>
   <%= f.input :member_id do %> 
-    <%= f.select :member_id, member_id = current_member.id, include_blank: 1 %>
+    <%= f.select :member_id, member_id = current_member.id %>
   <% end %>
   <%= f.input :message, label: 'Deine Frage' %>
   <%= f.button :submit, 'Frage erstellen' %>

@@ -8,7 +8,10 @@ class Member < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :nickname, :ismentor, :isadmin
   
-  validates :nickname, :presence => true
+  has_many :replies
+  has_many :questions
+  
+  validates :nickname, :presence => true, :length => { :minimum => 3 }
   validates :email, :presence => true
-  validates :password, :presence => true
+  validates :password, :presence => true, :length => { :minimum => 8 }
 end
