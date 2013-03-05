@@ -1,23 +1,18 @@
-<h1>Alle Fragen</h1>
-
-<table>
-  <tr>
-    <th>Fragen</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @questions.each do |question| %>
-  <tr>
-    <td><%= question.message %></td>
-    <td><%= link_to 'Zeigen', question %></td>
-    <td><%= link_to 'Bearbeiten', edit_question_path(question) %></td>
-    <td><%= link_to 'Löschen', question, method: :delete, data: { confirm: 'Wirklich löschen?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="page-header">
+  <h1>Fragen</h1><%= link_to new_question_path, :class => "btn" do %><i class="icon-file"></i> Neue Frage<% end %>
+</div>
 
 <br />
-
-<%= link_to 'Neue Frage', new_question_path %>
+<% @questions.each do |question| %>
+<div class="question">
+	<div class="question-message">
+		<p><%= question.message %></p>
+	</div>
+	<div class="question-information">
+		<span class="badge badge-success"><%= question.replies.count %></span>
+	</div>
+	<div class="question-action">
+	    <p><%= link_to question, :class => "btn btn-small" do %><i class="icon-info-sign"></i> Details<% end %> <%= link_to edit_question_path(question), :class => "btn btn-small" do %><i class="icon-edit"></i> Bearbeiten<% end %> <%= link_to question, :class => "btn btn-small", method: :delete, data: { confirm: 'Are you sure?' } do %><i class="icon-trash"></i> Löschen<% end %></p>
+</div>
+<hr>
+<% end %>
