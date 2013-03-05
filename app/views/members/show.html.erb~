@@ -5,12 +5,11 @@
   <%= @member.nickname %>
 </p>
 
-<% if @member.ismentor? %>
-  <p>
-    <b>Mentor</b>
-    <%= @member.nickname %>
-  </p>
-<% end %>
+<p>
+  <b>Status:</b>
+  <%= @member.status %>
+</p>
+
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>
