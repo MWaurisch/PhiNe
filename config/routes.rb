@@ -1,4 +1,6 @@
 PhiNe::Application.routes.draw do
+  devise_for :members
+
   resources :members
 
 
