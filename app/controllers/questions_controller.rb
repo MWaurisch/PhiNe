@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_filter :authenticate_member!
+
   # GET /questions
   # GET /questions.json
   def index
@@ -41,6 +43,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(params[:question])
+    @question.member = current_member
 
     respond_to do |format|
       if @question.save

@@ -1,9 +1,9 @@
 PhiNe::Application.routes.draw do
-<<<<<<< HEAD
+
   devise_for :members
-=======
+
   get "welcome/index"
->>>>>>> 65f12fd89aaefff8dced187ea5d1cbe796f40a50
+
 
   resources :members
 

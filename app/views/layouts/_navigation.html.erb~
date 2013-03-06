@@ -5,8 +5,6 @@
   
               <li><% if member_signed_in? %>
                     <%= link_to "Log Out", destroy_member_session_path %>
-                  <% else %>
-                    <%= link_to "Log In", new_member_session_path %>
                   <% end %>
               </li>
             </ul>
