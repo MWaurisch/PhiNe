@@ -1,11 +1,12 @@
 <h1>Neue Antwort</h1>
 
-
+<!--
 <p>
   <b>Frage:</b>
-  <%= @question.message %>
+  <%# = question.message %>
 </p>
+-->
 
 <%= render 'form' %>
 
-<%= link_to 'Zurück', questions_path %>
+<%= link_to 'Zurück', question_path %>

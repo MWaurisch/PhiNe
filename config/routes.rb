@@ -15,7 +15,7 @@ PhiNe::Application.routes.draw do
   resources :replies
 
 
-  resources :questions
+  resources :questions, :has_many => :replies
 
 
   # The priority is based upon order of creation:

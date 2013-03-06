@@ -1,25 +1,3 @@
-<!-- <%= form_for(@reply) do |f| %>
-  <% if @reply.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
-
-      <ul>
-      <% @reply.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :'Deine Antwort' %><br />
-    <%= f.text_area :message %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %> -->
-
 <%= simple_form_for @reply do |f| %>
   <%= f.input :message, label: 'Deine Antwort' %>
   <%= f.button :submit, 'Antwort erstellen' %>

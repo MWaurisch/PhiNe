@@ -20,4 +20,4 @@
 
 <br />
 
-<%= link_to 'Fragenübersicht', question_path %>
+<%= link_to 'New Reply', new_reply_path %>

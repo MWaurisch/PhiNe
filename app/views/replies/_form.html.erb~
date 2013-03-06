@@ -20,11 +20,6 @@
   </div>
 <% end %> -->
 
-<p>
-  <b>Message:</b>
-  <%= reply.question.message %>
-</p>
-
 <%= simple_form_for @reply do |f| %>
   <%= f.input :message, label: 'Deine Antwort' %>
   <%= f.button :submit, 'Antwort erstellen' %>

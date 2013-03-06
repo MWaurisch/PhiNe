@@ -8,6 +8,8 @@
   <%= "Frage erstellt von: #{@question.member.nickname}" %>
 </div>
 
+<%= link_to pluralize(@question.replies.size, 'reply'), question_replies_path(@question) %>
+
 <!--
 <%# @replies.each do |reply| %>
   <div class="reply">

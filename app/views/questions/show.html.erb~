@@ -5,7 +5,7 @@
   <%= @question.message %>
 </p>
 <div class="question-information">
-  <%= "Frage erstellt von: #{question.member.nickname}" %>
+  <%= "Frage erstellt von: #{@question.member.nickname}" %>
 </div>
 
 <!--
