@@ -1,6 +1,10 @@
 PhiNe::Application.routes.draw do
 
-  devise_for :members
+  #devise_for :members
+  
+  devise_for :members do
+    get "/members/sign_out" => "devise/sessions#destroy", :as => :destroy_member_session
+  end
 
   get "welcome/index"
 

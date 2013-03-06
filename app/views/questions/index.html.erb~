@@ -9,13 +9,16 @@
       <p><%= question.message %></p>
     </div>
     <div class="question-information">
+      <%= "Frage erstellt von: #{question.member.nickname}" %>
+    </div>
+    <div class="question-information">
       <span class="badge badge-success"><%= question.replies.count %></span>
     </div>
     <div class="question-action">
       <p><%= link_to question, :class => "btn btn-small" do %>
         <i class="icon-info-sign"></i> Details<% end %>
         
-        <%= link_to new_reply, :class => "btn btn-small" do %>
+        <%= link_to new_reply_path, :class => "btn btn-small" do %>
         <i class="icon-info-sign"></i> Antwort<% end %>
         
         <% if current_member == question.member %>
@@ -26,5 +29,6 @@
 	<% end %>
       </p>
     </div>
+  </div>
 <hr>
 <% end %>

@@ -35,6 +35,7 @@ class RepliesController < ApplicationController
   # GET /replies/1/edit
   def edit
     @reply = Reply.find(params[:id])
+    @reply.question = Question.find(params[:id])
   end
 
   # POST /replies
@@ -42,7 +43,7 @@ class RepliesController < ApplicationController
   def create
     @reply = Reply.new(params[:reply])
     @reply.member = current_member
-    @reply.question = current_member
+    #@reply.question = Question.find(params[:id])
 
     respond_to do |format|
       if @reply.save
