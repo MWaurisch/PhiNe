@@ -1,5 +1,5 @@
 <%= simple_form_for @question do |f| %>
-  Fragesteller: <%= @question.current_member.nickname %><br/>
-  <%= f.input :message, label: 'Deine Frage' %>
+  Fragesteller: <%= current_member.nickname %><br/>
+  <%= f.input :message %>
   <%= f.button :submit, 'Frage erstellen' %>
 <% end %>

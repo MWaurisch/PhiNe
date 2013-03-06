@@ -41,8 +41,6 @@ class RepliesController < ApplicationController
   # POST /replies.json
   def create
     @reply = Reply.new(params[:reply])
-    @reply.member = current_member
-    @reply.question = current_member
 
     respond_to do |format|
       if @reply.save

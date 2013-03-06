@@ -5,13 +5,16 @@
 
   <div class="form-inputs">
     <%= f.input :nickname, :label => "Benutzername", :required => true, :autofocus => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :email, :label => "Email-Adresse", :required => true %>
+    <%= f.input :password, :label => "Passwort", :required => true %>
+    <%= f.input :password_confirmation, :label => "Passwort wiederholen", :required => true %>
+   <!-- <%= f.input :ismentor, :label => "Bist du ein Mentor?", as: :check_boxes %> -->
+    <%= f.check_box :ismentor, :style => "float:left;" %>
+    <%= f.label :ismentor, " Bist du ein Mentor?" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Account erstellen" %>
   </div>
 <% end %>
 
