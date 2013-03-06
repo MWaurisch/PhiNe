@@ -1,4 +1,4 @@
-<%= simple_form_for @reply do |f| %>
+<%= simple_form_for [@question, @reply] do |f| %>
   <%= f.input :message, label: 'Deine Antwort' %>
   <%= f.button :submit, 'Antwort erstellen' %>
 <% end %>

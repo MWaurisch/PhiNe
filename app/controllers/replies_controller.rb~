@@ -25,6 +25,7 @@ class RepliesController < ApplicationController
   # GET /replies/new.json
   def new
     @reply = Reply.new
+    @reply.question = @question
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,20 +36,20 @@ class RepliesController < ApplicationController
   # GET /replies/1/edit
   def edit
     @reply = Reply.find(params[:id])
-    @reply.question = Question.find(params[:id])
   end
 
   # POST /replies
   # POST /replies.json
   def create
-    @reply = Reply.new(params[:reply])
+    @reply = Reply.new(params[:id])
     @reply.member = current_member
-    @reply.question = Question.find(params[:id])
+    @question = Question.find(params[:id])
+    @reply.question = @question
 
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
-        format.json { render json: @reply, status: :created, location: @reply }
+        format.html { redirect_to @question, notice: 'Reply was successfully created.' }
+        format.json { render json: @question, status: :created, location: @reply }
       else
         format.html { render action: "new" }
         format.json { render json: @reply.errors, status: :unprocessable_entity }

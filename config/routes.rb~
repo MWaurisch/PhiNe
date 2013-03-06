@@ -12,10 +12,8 @@ PhiNe::Application.routes.draw do
   resources :members
 
 
-  resources :replies
-
-
-  resources :questions
+  resources :questions do
+    resources :replies
 
 
   # The priority is based upon order of creation:
