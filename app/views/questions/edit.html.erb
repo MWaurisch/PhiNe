@@ -1,6 +1,11 @@
 <h1>Frage bearbeiten</h1>
 
+<p>
+  <b>Frage:</b><br />
+  <%= @question.message %>
+</p>
+
 <%= render 'form' %>
 
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to questions_path, :class => "btn btn-small" do %>
+<i class="icon-info-sign"></i> Zurück<% end %>

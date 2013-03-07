@@ -5,8 +5,22 @@
   <%= @question.message %>
 </p>
 <div class="question-information">
-  <%= "Frage erstellt von: #{@question.member.nickname}" %>
+  <p>
+  <%= "Frage erstellt von: #{@question.member.nickname}" %><br />
+  </p>
 </div>
+
+<p>
+<% if current_member == @question.member %>
+  <%= link_to edit_question_path(@question), :class => "btn btn-small" do %>
+  <i class="icon-edit"></i> Bearbeiten<% end %>
+  <%= link_to @question, :class => "btn btn-small", method: :delete, data: { confirm: 'Bist du sicher?' } do %>
+  <i class="icon-trash"></i> Löschen<% end %>
+<% end %>
+</p>
+
+<p>
+  <b>Antworten:</b><br />
 
 <% if @question.replies.size != 0 %>
 <% @question.replies.each do |reply| %>
@@ -30,8 +44,17 @@
   </div>
 <hr>
 <% end %>
-<% end %>
--->
 
-<%= link_to 'Bearbeiten', edit_question_path(@question) %> |
-<%= link_to 'Zurück', questions_path %>
+<% else %>
+
+<p>
+  Noch sind keine Antworten vorhanden.<br />
+</p>
+
+<% end %>
+</p>
+
+<%= link_to new_question_reply_path(@question), :class => "btn btn-small" do %>
+<i class="icon-info-sign"></i> Antwort<% end %>
+<%= link_to questions_path, :class => "btn btn-small" do %>
+<i class="icon-info-sign"></i> Zurück<% end %>

@@ -2,7 +2,7 @@
 <div class="hero-unit">
   <h1>Wer nicht fragt, bleibt dumm!</h1>
     <p>Stelle deine Frage an Uru und philosophiere mit Gleichgesinnten über eine mögliche Antwort.</p>
-    <p><%= link_to new_question_path(@question), :class => "btn btn-big" do %>
+    <p><%= link_to new_question_path(@question), :class => "btn btn-tall" do %>
         <i class="icon-info-sign"></i> Stell deine Frage<% end %></p>
 </div>
 

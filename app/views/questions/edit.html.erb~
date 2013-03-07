@@ -1,4 +1,9 @@
-<h1>Editing question</h1>
+<h1>Frage bearbeiten</h1>
+
+<p>
+  <b>Frage:</b><br />
+  <%= @question.message %>
+</p>
 
 <%= render 'form' %>
 
