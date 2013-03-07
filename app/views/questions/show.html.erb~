@@ -9,12 +9,15 @@
   <%= "Frage erstellt von: #{@question.member.nickname}" %><br />
   </p>
 </div>
+<div class="question-information">
+  <span class="badge badge-success"><%= @question.replies.count %></span>
+</div>
 
 <p>
 <% if current_member == @question.member %>
   <%= link_to edit_question_path(@question), :class => "btn btn-small" do %>
   <i class="icon-edit"></i> Bearbeiten<% end %>
-  <%= link_to questions_path, :class => "btn btn-small", method: :delete, data: { confirm: 'Bist du sicher?' } do %>
+  <%= link_to @question, :class => "btn btn-small", method: :delete, data: { confirm: 'Bist du sicher?' } do %>
   <i class="icon-trash"></i> Löschen<% end %>
 <% end %>
 </p>

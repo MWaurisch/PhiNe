@@ -5,9 +5,10 @@
   <%= @question.message %>
 </p>
 <div class="question-information">
-  <p>
   <%= "Frage erstellt von: #{@question.member.nickname}" %><br />
-  </p>
+</div>
+<div class="question-information">
+  <span class="badge badge-success"><%= @question.replies.count %></span>
 </div>
 
 <p>
