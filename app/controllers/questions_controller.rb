@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+    logger.debug @questions
 
     respond_to do |format|
       format.html # index.html.erb

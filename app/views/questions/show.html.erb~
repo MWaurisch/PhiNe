@@ -8,8 +8,6 @@
   <%= "Frage erstellt von: #{@question.member.nickname}" %>
 </div>
 
-<%# = link_to pluralize(@question.replies.size, 'reply'), question_replies_path(@question) %>
-
 <% @question.replies.each do |reply| %>
   <div class="reply">
     <div class="reply-message">
@@ -21,10 +19,10 @@
     <div class="reply-action">
       <p>      
         <% if current_member == reply.member %>
-	  <%= link_to edit_reply_path(@question), :class => "btn btn-small" do %>
-	  <i class="icon-edit"></i> Bearbeiten<% end %> 
-	  <%= link_to question, :class => "btn btn-small", method: :delete, data: { confirm: 'Bist du sicher?' } do %>
-	  <i class="icon-trash"></i> Löschen<% end %>
+	  <%= link_to edit_question_reply_path(@question), :class => "btn btn-small" do %>
+	  <i class="icon-edit"></i> Bearbeiten<% end %>
+	  
+	  <%= link_to @question, :class => "btn btn-small", method: :delete, data: { confirm: 'Bist du sicher?' } do %>	  <i class="icon-trash"></i> Löschen<% end %>
 	<% end %>
       </p>
     </div>

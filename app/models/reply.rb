@@ -1,5 +1,5 @@
 class Reply < ActiveRecord::Base
-  attr_accessible :message
+  attr_accessible :message, :member_id, :question_id
   belongs_to :question
   belongs_to :member
   
